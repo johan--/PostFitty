@@ -8,6 +8,6 @@ class UserProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_userprofile)
+        setContentView(R.layout.activity_user_profile)
     }
 }
