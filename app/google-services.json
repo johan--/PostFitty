@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "331706434795",
+    "firebase_url": "https://postfitty.firebaseio.com",
+    "project_id": "postfitty",
+    "storage_bucket": "postfitty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331706434795:android:100c1d685306c3f6",
+        "android_client_info": {
+          "package_name": "com.example.matthias.postfitty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331706434795-faiqoqmfdakb2d1l4qsncv5sgg1q38p5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.matthias.postfitty",
+            "certificate_hash": "2ef4be7c7e15804456918909c5afe41f1ec3517d"
+          }
+        },
+        {
+          "client_id": "331706434795-t8j0tdbkinu1dhe5fl8itunigeeo8tem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDft3RT4tEsBDbyA6d_9sGGjtcptHFNjkw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331706434795-t8j0tdbkinu1dhe5fl8itunigeeo8tem.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

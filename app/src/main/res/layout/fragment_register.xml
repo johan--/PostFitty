@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.matthias.postfitty.Fragments.LoginFragment">
+    tools:context="com.example.matthias.postfitty.Fragments.RegisterFragment">
 
     <TextView
         android:id="@+id/appName"
@@ -12,7 +12,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:fontFamily="sans-serif-light"
-        android:text="Postfitty"
+        android:text="Sign Up"
         android:textColor="@android:color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -31,9 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
-        android:fontFamily="sans-serif-light"
         android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_centerHorizontal="true"
@@ -52,13 +52,31 @@
         android:layout_marginTop="56dp"
         android:background="@drawable/login_edittext_background"
         android:fontFamily="sans-serif-light"
-        android:hint="Email Address"
+        android:hint="Username"
         android:textAlignment="center"
         android:textColorHint="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appDescription" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/login_edittext_background"
+        android:fontFamily="sans-serif-light"
+        android:hint="Email Address"
+        android:textAlignment="center"
+        android:textColorHint="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -80,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_centerHorizontal="true"
@@ -89,7 +107,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/login_button_background"
         android:fontFamily="sans-serif-light"
-        android:hint="Login"
+        android:hint="Register"
         android:textAlignment="center"
         android:textColorHint="@android:color/white"
         android:textSize="16sp"
@@ -109,17 +127,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="Don't have an account ? "
+            android:text="Already have an account ? "
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/signUpTextView"
+            android:id="@+id/signInTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:fontFamily="sans-serif-light"
-            android:text="Sign Up"
+            android:text="Sign In"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
