@@ -8,10 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.matthias.postfitty.Activity.LoginRegisterActivity
-import com.example.matthias.postfitty.Activity.MainActivity
 
 import com.example.matthias.postfitty.R
-import com.example.matthias.postfitty.Utils.FragmentType
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_register.*
 
@@ -23,12 +21,6 @@ class RegisterFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        registerButton.setOnClickListener {
-            registerNewUser()
-        }
-        signInTextView.setOnClickListener {
-            loginRegisterActivity.handleFragment(FragmentType.LOGIN)
-        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
