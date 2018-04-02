@@ -1,8 +1,0 @@
-
-tsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(³Íäš8“•ø¦,
-Bsquid:S1172"&Remove these unused method parameters.(Ö°´©8Á‚ù¦,
-Qsquid:S1172"0Remove this unused method parameter "errorBody".(Í¤áøÿÿÿÿ8Á‚ù¦,
-Vsquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Á‚ù¦,
-asquid:S1193"@Replace the usage of the "instanceof" operator by a catch block.(£çÉ ÿÿÿÿÿ8Á‚ù¦,
-ssquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.( Àş¹ÿÿÿÿÿ8Á‚ù¦,
-Osquid:S1068".Remove this unused "webservice" private field.(ëª¹½ûÿÿÿÿ8¨ÏŸ¦,

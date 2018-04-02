@@ -1,45 +1,50 @@
 package com.example.matthias.postfitty.Activity
 
-import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import com.example.matthias.postfitty.Api.Webservice
-import com.example.matthias.postfitty.Event.OnPostsReceivedEvent
-import com.example.matthias.postfitty.Model.Post
+import com.example.matthias.postfitty.Fragments.MapsFragment
+import com.example.matthias.postfitty.Fragments.SettingsFragment
+import com.example.matthias.postfitty.Fragments.UserProfileFragment
 import com.example.matthias.postfitty.R
 import kotlinx.android.synthetic.main.activity_main.*
-import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
 
 class MainActivity : AppCompatActivity() {
 
-    val webservice = Webservice()
-    var posts = listOf<Post>()
+    private val mainFrameLayout = R.id.mainFrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        webservice.loadPosts()
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+    }
 
-        openMapsButton.setOnClickListener {
-            val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_map -> {
+                supportFragmentManager.beginTransaction()
+                        .replace(mainFrameLayout, MapsFragment.Companion.newInstance())
+                        .addToBackStack(null)
+                        .commit()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_user_profile -> {
+                supportFragmentManager.beginTransaction()
+                        .replace(mainFrameLayout, UserProfileFragment.Companion.newInstance())
+                        .addToBackStack(null)
+                        .commit()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_settings -> {
+                supportFragmentManager.beginTransaction()
+                        .replace(mainFrameLayout, SettingsFragment.Companion.newInstance())
+                        .addToBackStack(null)
+                        .commit()
+                return@OnNavigationItemSelectedListener true
+            }
         }
+        false
     }
 
-    override fun onStart() {
-        super.onStart()
-        EventBus.getDefault().register(this)
-    }
-
-    override fun onStop() {
-        super.onStop()
-        EventBus.getDefault().unregister(this)
-    }
-
-    @Subscribe()
-    fun onEvent(event: OnPostsReceivedEvent) {
-        posts = event.posts
-    }
 }

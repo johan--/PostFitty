@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PostFittyApp.iml" filepath="$PROJECT_DIR$/PostFittyApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PostFitty.iml" filepath="$PROJECT_DIR$/PostFitty.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
