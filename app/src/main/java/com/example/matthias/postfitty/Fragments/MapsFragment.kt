@@ -9,6 +9,7 @@ import com.example.matthias.postfitty.Activity.SplashActivity
 import com.example.matthias.postfitty.Model.Post
 import com.example.matthias.postfitty.R
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapFragment
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
@@ -22,11 +23,14 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_maps, container, false)
-        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+       return inflater.inflate(R.layout.fragment_maps, container, false)
+    }
 
-        return rootView
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val fragment = childFragmentManager.findFragmentById(R.id.gMap)
+        fragment.getMapAsync(this)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
