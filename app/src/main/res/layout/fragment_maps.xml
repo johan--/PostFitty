@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.MapsFragment">
 
-    <fragment
-        android:id="@+id/gMap"
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.example.matthias.postfitty.Fragments.MapsFragment"/>
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
