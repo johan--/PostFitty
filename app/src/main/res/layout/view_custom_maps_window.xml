@@ -1,41 +1,120 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        android:paddingBottom="16dp">
 
         <TextView
             android:id="@+id/postUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="Matthias Eymers"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/onlineStateDot"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/dot"
+            app:layout_constraintStart_toStartOf="@id/postUserName"
+            app:layout_constraintTop_toBottomOf="@id/postUserName" />
+
+        <TextView
+            android:id="@+id/onlineState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Online"
+            app:layout_constraintBottom_toBottomOf="@+id/onlineStateDot"
+            app:layout_constraintStart_toEndOf="@id/onlineStateDot"
+            app:layout_constraintTop_toTopOf="@+id/onlineStateDot"
+            app:layout_constraintVertical_bias="0.55" />
+
+        <TextView
+            android:id="@+id/postHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Headline"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/onlineStateDot"
+            app:layout_constraintTop_toBottomOf="@id/onlineStateDot" />
+
+        <TextView
+            android:id="@+id/postMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:scrollHorizontally="false"
+            android:textSize="11sp"
+            android:text="This is a headline. Lorem Ipsum Dolor Und so Weiter."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/postHeadline"
+            app:layout_constraintTop_toBottomOf="@+id/postHeadline" />
+
+        <TextView
+            android:id="@+id/postAgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/postMessage"
+            app:layout_constraintTop_toBottomOf="@+id/postMessage"
+            android:text="10 minutes ago"
+            android:textSize="9sp"/>
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintStart_toStartOf="@+id/postAgo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postAgo"/>
+
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/waldweg"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/postAgo"
+            app:layout_constraintTop_toBottomOf="@+id/postAgo" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.21772152" />
+            app:layout_constraintGuide_percent="0.16" />
 
     </android.support.constraint.ConstraintLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ProfileCircleImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/me"
         app:civ_border_color="@android:color/white"
         app:civ_border_width="4dp" />

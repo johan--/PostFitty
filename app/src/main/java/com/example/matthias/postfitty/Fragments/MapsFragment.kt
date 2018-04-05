@@ -5,9 +5,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.matthias.postfitty.Activity.MainActivity
 import com.example.matthias.postfitty.Activity.SplashActivity
 import com.example.matthias.postfitty.Model.Post
 import com.example.matthias.postfitty.R
+import com.example.matthias.postfitty.View.CustomMapsWindowView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
