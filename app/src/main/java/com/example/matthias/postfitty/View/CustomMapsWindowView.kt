@@ -4,7 +4,6 @@ import android.view.View
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker
 import android.app.Activity
-import android.widget.TextView
 import com.example.matthias.postfitty.R
 
 
@@ -21,8 +20,7 @@ class CustomMapsWindowView : GoogleMap.InfoWindowAdapter {
     }
 
     override fun getInfoContents(marker: Marker?): View {
-        val view = context.layoutInflater.inflate(R.layout.view_custom_maps_window, null)
 
-        return view
+        return context.layoutInflater.inflate(R.layout.view_custom_maps_window, null)
     }
 }

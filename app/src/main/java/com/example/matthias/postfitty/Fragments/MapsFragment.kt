@@ -1,5 +1,8 @@
 package com.example.matthias.postfitty.Fragments
 
+import android.app.Activity
+import android.app.Application
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -40,6 +43,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
+        val markerInfoWindowAdapter = CustomMapsWindowView(activity!!)
+        googleMap.setInfoWindowAdapter(markerInfoWindowAdapter)
 
         for (post: Post in posts) {
             mMap.addMarker(MarkerOptions().position(LatLng(post.latitude, post.longitude)).title(post.title))

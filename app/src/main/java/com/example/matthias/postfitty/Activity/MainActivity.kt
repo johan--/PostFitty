@@ -26,21 +26,21 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.navigation_map -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(mainFrameLayout, MapsFragment.Companion.newInstance())
+                        .replace(mainFrameLayout, MapsFragment.newInstance())
                         .addToBackStack(null)
                         .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_user_profile -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(mainFrameLayout, UserProfileFragment.Companion.newInstance())
+                        .replace(mainFrameLayout, UserProfileFragment.newInstance())
                         .addToBackStack(null)
                         .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_settings -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(mainFrameLayout, SettingsFragment.Companion.newInstance())
+                        .replace(mainFrameLayout, SettingsFragment.newInstance())
                         .addToBackStack(null)
                         .commit()
                 return@OnNavigationItemSelectedListener true
