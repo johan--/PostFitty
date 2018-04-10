@@ -1,14 +1,11 @@
 package com.example.matthias.postfitty.Fragments
 
-import android.app.Activity
-import android.app.Application
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.matthias.postfitty.Activity.MainActivity
+import android.widget.Toast
 import com.example.matthias.postfitty.Activity.SplashActivity
 import com.example.matthias.postfitty.Model.Post
 import com.example.matthias.postfitty.R
@@ -19,6 +16,7 @@ import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_maps.*
 
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
@@ -39,6 +37,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         mapView?.onCreate(savedInstanceState)
         mapView?.onResume()
         mapView?.getMapAsync(this)
+
+        newPostFab.setOnClickListener {
+            Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -48,7 +50,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         googleMap.setInfoWindowAdapter(markerInfoWindowAdapter)
 
         for (post: Post in posts) {
-            mMap.addMarker(MarkerOptions().position(LatLng(post.latitude, post.longitude)).title(post.title))
+            mMap.addMarker(MarkerOptions()
+                    .position(LatLng(post.latitude, post.longitude))
+                    .title(post.title))
         }
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(posts[0].latitude, posts[0].longitude), 8f))

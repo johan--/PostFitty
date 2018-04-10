@@ -4,8 +4,8 @@ import com.example.matthias.postfitty.Event.AbstractWebserviceEvent;
 import com.example.matthias.postfitty.Event.OnNewPostCreatedEvent;
 import com.example.matthias.postfitty.Event.OnPostsReceivedEvent;
 import com.example.matthias.postfitty.Model.Post;
-import com.example.matthias.postfitty.Utils.BuildConfig;
 import com.example.matthias.postfitty.Utils.Request;
+import com.example.matthias.postfitty.Utils.UrlUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -26,7 +26,7 @@ public class Webservice {
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder();
         OkHttpClient okHttpClient = builder.build();
         Retrofit restAdapter = new Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl(UrlUtils.BASE_URL)
                 .addConverterFactory(converterFactory())
                 .client(okHttpClient)
                 .build();
